@@ -1,5 +1,7 @@
 package basic.student;
 
+import basic.student.Student;
+
 public class StudentSample {
     public static void main(String[] args) {
         //変数の宣言
