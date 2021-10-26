@@ -55,31 +55,37 @@ class StudentMapSample {
 
             for (Student student : studentList) {
 
-                if (student.getGroup().equals("1-1")) {
-                    countStudent1++;
-                    sumJap1 += student.getJap();
-                    sumMath1 += student.getMath();
-                    sumEng1 += student.getEng();
-                } else if (student.getGroup().equals("1-2")) {
-                    countStudent2++;
-                    sumJap2 += student.getJap();
-                    sumMath2 += student.getMath();
-                    sumEng2 += student.getEng();
-                } else if (student.getGroup().equals("1-3")) {
-                    countStudent3++;
-                    sumJap3 += student.getJap();
-                    sumMath3 += student.getMath();
-                    sumEng3 += student.getEng();
-                } else if (student.getGroup().equals("1-4")) {
-                    countStudent4++;
-                    sumJap4 += student.getJap();
-                    sumMath4 += student.getMath();
-                    sumEng4 += student.getEng();
-                } else if (student.getGroup().equals("1-5")) {
-                    countStudent5++;
-                    sumJap5 += student.getJap();
-                    sumMath5 += student.getMath();
-                    sumEng5 += student.getEng();
+                switch (student.getGroup()) {
+                    case "1-1":
+                        countStudent1++;
+                        sumJap1 += student.getJap();
+                        sumMath1 += student.getMath();
+                        sumEng1 += student.getEng();
+                        break;
+                    case "1-2":
+                        countStudent2++;
+                        sumJap2 += student.getJap();
+                        sumMath2 += student.getMath();
+                        sumEng2 += student.getEng();
+                        break;
+                    case "1-3":
+                        countStudent3++;
+                        sumJap3 += student.getJap();
+                        sumMath3 += student.getMath();
+                        sumEng3 += student.getEng();
+                        break;
+                    case "1-4":
+                        countStudent4++;
+                        sumJap4 += student.getJap();
+                        sumMath4 += student.getMath();
+                        sumEng4 += student.getEng();
+                        break;
+                    case "1-5":
+                        countStudent5++;
+                        sumJap5 += student.getJap();
+                        sumMath5 += student.getMath();
+                        sumEng5 += student.getEng();
+                        break;
                 }
             }
             System.out.println("1-1\n国語の平均点" + sumJap1 / countStudent1 + "\n数学の平均点" + sumMath1 / countStudent1 + "\n英語の平均点" + sumEng1 / countStudent1);
