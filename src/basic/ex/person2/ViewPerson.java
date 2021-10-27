@@ -36,13 +36,23 @@ public class ViewPerson {
         }
 
         for (Map.Entry entry: personGroupMap.entrySet()) {
-            double sumAge = 0;
+            double sumAge = 0,menSumAge = 0,womenSumAge = 0,menCnt = 0,womenCnt = 0;
             for (Person person:(List<Person>)entry.getValue()) {
                 sumAge += person.getAge();
-                System.out.println(person);
+                if (person.getGender().equals(Gender.MEN)) {
+                    menCnt++;
+                    menSumAge += person.getAge();
+                } else {
+                    womenCnt++;
+                    womenSumAge += person.getAge();
+                }
             }
             double aveAge = sumAge/ ((List<Person>) entry.getValue()).size();
-            System.out.println(String.format("%s の平均年齢： %.2f\n",((Birthplace)entry.getKey()).getPlaceName(),aveAge));
+            double menAveAge = menSumAge/menCnt;
+            double womenAveAge = womenSumAge/womenCnt;
+            System.out.println(String.format("\n%s の平均年齢： %.2f",((Birthplace)entry.getKey()).getPlaceName(),aveAge));
+            System.out.println(String.format("%s の男の平均年齢： %.2f",((Birthplace) entry.getKey()).getPlaceName(),menAveAge));
+            System.out.println(String.format("%s の女の平均年齢： %.2f",((Birthplace) entry.getKey()).getPlaceName(),womenAveAge));
 
         }
     }
