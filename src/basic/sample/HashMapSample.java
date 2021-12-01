@@ -10,7 +10,7 @@ public class HashMapSample {
         //要素の追加
         map.put("apple","りんご");
         map.put("pineapple","パイナップル");
-        map.put("orenge","オレンジ");
+        map.put("orange","オレンジ");
         //表示
         System.out.println(map);
         //要素の取得
@@ -24,7 +24,7 @@ public class HashMapSample {
             System.out.println(entry.getKey() + ":" + entry.getValue());
         }
         //要素の削除
-        System.out.println(map.remove("orenge"));
+        System.out.println(map.remove("orange"));
         //要素の変更
         System.out.println(map.put("apple","リンゴ"));
         //表示
