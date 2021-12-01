@@ -26,7 +26,7 @@ public class ViewStock {
         // Value：Price
         for (PersonalComputer p : pcList) {
             int storageNo = p.getStorageNo();
-            if (!storagePriceMap.containsKey(storageNo)) {
+            if (!storagePriceMap.containsKey(storageNo)) { //Mapの中に倉庫番号がkeyとして入っているか
                 storagePriceMap.put(storageNo, new ArrayList<>());
             }
             storagePriceMap.get(storageNo).add(p.getPrice());
