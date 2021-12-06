@@ -59,5 +59,37 @@ public class ViewStock {
             System.out.println("倉庫番号" + entry.getKey() + ":");
             System.out.println("OS:" + entry.getValue());
         }
+        //倉庫ごとのPC合計金額を計算し表示
+        System.out.println("//倉庫ごとの合計金額");
+        for (Map.Entry entry: storagePriceMap.entrySet()){
+            double sum = 0; //合計を入れる変数を定義
+            for (Integer i: (List<Integer>)entry.getValue()){
+                sum += i;
+            }
+            System.out.println("倉庫番号" + entry.getKey() + ":");
+            System.out.println("合計金額" + sum + "円");
+        }
+        //合計台数を表示
+        System.out.println("//倉庫ごとの合計台数");
+        for (Map.Entry entry: storagePriceMap.entrySet()){
+            int cnt = ((List)entry.getValue()).size();
+            System.out.println("倉庫番号" + entry.getKey() + ":");
+            System.out.println("合計台数" + cnt + "台");
+        }
+
+        //倉庫別に１台ごとの平均金額を表示
+        System.out.println("//倉庫ごとのPC平均金額");
+        for (Map.Entry entry: storagePriceMap.entrySet()){
+            double sum = 0;
+            int cnt = 0;
+            for (Integer i :((List<Integer>)entry.getValue())){
+                sum += i;
+                cnt++;
+            }
+            System.out.println("倉庫番号" + entry.getKey() + ":");
+            System.out.println("平均金額" + Math.round(sum/cnt * 10.0) / 10.0 + "円");
+        }
+
+        //倉庫別に1台ごとの平均金額を表示
     }
 }
